@@ -1,0 +1,48 @@
+CCWS Banner Web Component
+Copyright (c) 2025
+
+This project includes the ccws-banner JavaScript component and multiple levels
+of default configuration intended to allow the banner to function on any site
+without requiring custom setup.
+
+The configuration system operates in the following order:
+
+1. Site-Provided Configuration  
+   Implementers may host their own configuration file
+   (e.g., /ccws-banner.config.js, /config/ccws-banner.config.js,
+   or /assets/config/ccws-banner.config.js), or they may define a global
+   window.CCWSBannerConfig object. These site-specific configuration files
+   are owned and controlled by the implementer and are not part of this
+   project's distribution.
+
+2. Repo-Provided Default Configuration  
+   This repository includes a default configuration file
+   (ccws-banner.config.js) intended as a shared fallback when no
+   site-specific configuration is available. This file is distributed as part
+   of the project and demonstrates the available configuration options.
+
+3. Embedded Internal Defaults  
+   The ccws-banner.js script contains an internal hardcoded configuration
+   object used as a final fallback. These embedded defaults exist solely to
+   guarantee that the component remains functional even if all external
+   configuration files fail to load.
+
+All three configuration layers contain non-sensitive display preferences
+such as API URLs, banner text, colors, fonts, season start/end dates, and
+timing settings.
+
+The banner retrieves publicly accessible JSON data from an external website
+operated by Community Partnership of the Ozarks (CPO):  
+https://ccws.cpozarks.org
+
+All rights to the external data, website content, branding, and presentation
+remain solely with their respective owners. This project does not claim any
+ownership, endorsement, affiliation, or partnership with CPO or its programs.
+
+The banner may attempt to display the external website in an HTML <iframe>.
+Whether this is allowed depends entirely on the external site's technical
+and policy settings, including X-Frame-Options and Content-Security-Policy.
+If framing is disallowed, the banner automatically falls back to opening the
+site in a new tab for user safety and accessibility.
+
+For licensing terms, see the accompanying LICENSE file.

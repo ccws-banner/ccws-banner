@@ -1,0 +1,23 @@
+# macOS
+.DS_Store
+
+# Node / tooling cache
+node_modules/
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Logs
+*.log
+
+# Editor settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Builds / coverage (none expected, but keep clean)
+dist/
+build/
+coverage/
