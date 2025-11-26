@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CCWS Banner Demo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f172a;
+      --panel: #111827;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+      --border: #1f2937;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, -apple-system, sans-serif;
+      background: radial-gradient(circle at 10% 20%, #0b1224, #0f172a 35%), #0f172a;
+      color: var(--text);
+      min-height: 100vh;
+      padding: 4rem 1.5rem 6rem;
+      display: flex;
+      justify-content: center;
+    }
+    .page {
+      width: min(960px, 100%);
+    }
+    header {
+      margin-bottom: 1.5rem;
+    }
+    h1 {
+      margin: 0 0 0.25rem;
+      font-size: clamp(1.9rem, 3vw + 1rem, 2.6rem);
+      letter-spacing: -0.02em;
+    }
+    p.lead {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    .panel {
+      background: linear-gradient(145deg, rgba(56, 189, 248, 0.07), rgba(56, 189, 248, 0.02));
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.25rem 1.5rem;
+      margin: 1.25rem 0;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+    }
+    .panel h2 {
+      margin: 0 0 0.6rem;
+      font-size: 1.1rem;
+      letter-spacing: -0.01em;
+    }
+    code, pre {
+      font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+      color: #cbd5f5;
+    }
+    pre {
+      background: #0b1220;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem;
+      overflow-x: auto;
+      margin: 0.5rem 0 0;
+    }
+    .demo-area {
+      position: relative;
+      padding-top: 2rem;
+    }
+    .note {
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-top: 0.5rem;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      background: rgba(56, 189, 248, 0.12);
+      color: var(--text);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 0.75rem;
+    }
+    .footer {
+      margin-top: 2rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    a:hover { text-decoration: underline; }
+  </style>
+
+  <script src="../ccws-banner.config.js"></script>
+  <script src="../ccws-banner.js"></script>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <div class="badge">Live Demo</div>
+      <h1>CCWS Banner</h1>
+      <p class="lead">
+        A lightweight, zero-dependency banner that shows Crisis Cold Weather Shelter status.
+        Click the banner below to see the modal/iframe behavior with automatic fallback.
+      </p>
+    </header>
+
+    <section class="panel">
+      <h2>How to embed</h2>
+      <p class="note">Serve from GitHub Pages or self-host. Place these lines before <code>&lt;/body&gt;</code>:</p>
+      <pre><code>&lt;script src="https://YOUR-USERNAME.github.io/ccws-banner/ccws-banner.config.js"&gt;&lt;/script&gt;
+&lt;script src="https://YOUR-USERNAME.github.io/ccws-banner/ccws-banner.js"&gt;&lt;/script&gt;
+&lt;ccws-banner&gt;&lt;/ccws-banner&gt;</code></pre>
+      <p class="note">Swap <code>YOUR-USERNAME</code> (and org if applicable) for your GitHub Pages domain.</p>
+    </section>
+
+    <section class="panel demo-area">
+      <h2>Banner preview</h2>
+      <p class="note">Seasonal rules apply; if out of season you may not see the banner.</p>
+      <ccws-banner></ccws-banner>
+    </section>
+
+    <section class="panel">
+      <h2>Configuration</h2>
+      <p class="note">
+        To customize, place a <code>ccws-banner.config.js</code> on your host at one of:
+        <code>/ccws-banner.config.js</code>, <code>/config/ccws-banner.config.js</code>,
+        or <code>/assets/config/ccws-banner.config.js</code>. The banner prefers host config,
+        then falls back to the repo default.
+      </p>
+    </section>
+
+    <div class="footer">
+      <div>Licensed under Apache 2.0. See <a href="../LICENSE">LICENSE</a> and <a href="../NOTICE">NOTICE</a>.</div>
+    </div>
+  </main>
+
+</body>
+</html>
