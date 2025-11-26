@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,7 +17,11 @@
       --accent: #38bdf8;
       --border: #1f2937;
     }
-    * { box-sizing: border-box; }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: "Inter", system-ui, -apple-system, sans-serif;
@@ -27,23 +32,28 @@
       display: flex;
       justify-content: center;
     }
+
     .page {
       width: min(960px, 100%);
     }
+
     header {
       margin-bottom: 1.5rem;
     }
+
     h1 {
       margin: 0 0 0.25rem;
       font-size: clamp(1.9rem, 3vw + 1rem, 2.6rem);
       letter-spacing: -0.02em;
     }
+
     p.lead {
       margin: 0;
       color: var(--muted);
       font-size: 1rem;
       line-height: 1.6;
     }
+
     .panel {
       background: linear-gradient(145deg, rgba(56, 189, 248, 0.07), rgba(56, 189, 248, 0.02));
       border: 1px solid var(--border);
@@ -52,15 +62,19 @@
       margin: 1.25rem 0;
       box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
     }
+
     .panel h2 {
       margin: 0 0 0.6rem;
       font-size: 1.1rem;
       letter-spacing: -0.01em;
     }
-    code, pre {
+
+    code,
+    pre {
       font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
       color: #cbd5f5;
     }
+
     pre {
       background: #0b1220;
       border: 1px solid var(--border);
@@ -69,16 +83,19 @@
       overflow-x: auto;
       margin: 0.5rem 0 0;
     }
+
     .demo-area {
       position: relative;
       padding-top: 2rem;
     }
+
     .note {
       color: var(--muted);
       font-size: 0.95rem;
       line-height: 1.6;
       margin-top: 0.5rem;
     }
+
     .badge {
       display: inline-flex;
       align-items: center;
@@ -92,21 +109,25 @@
       font-size: 0.9rem;
       margin-bottom: 0.75rem;
     }
+
     .footer {
       margin-top: 2rem;
       color: var(--muted);
       font-size: 0.9rem;
     }
+
     a {
       color: var(--accent);
       text-decoration: none;
     }
-    a:hover { text-decoration: underline; }
+
+    a:hover {
+      text-decoration: underline;
+    }
   </style>
 
-  <script src="../ccws-banner.config.js"></script>
-  <script src="../ccws-banner.js"></script>
 </head>
+
 <body>
   <main class="page">
     <header>
@@ -117,20 +138,9 @@
         Click the banner below to see the modal/iframe behavior with automatic fallback.
       </p>
     </header>
-
-    <section class="panel">
-      <h2>How to embed</h2>
-      <p class="note">Serve from GitHub Pages or self-host. Place these lines before <code>&lt;/body&gt;</code>:</p>
-      <pre><code>&lt;script src="https://YOUR-USERNAME.github.io/ccws-banner/ccws-banner.config.js"&gt;&lt;/script&gt;
-&lt;script src="https://YOUR-USERNAME.github.io/ccws-banner/ccws-banner.js"&gt;&lt;/script&gt;
-&lt;ccws-banner&gt;&lt;/ccws-banner&gt;</code></pre>
-      <p class="note">Swap <code>YOUR-USERNAME</code> (and org if applicable) for your GitHub Pages domain.</p>
-    </section>
-
     <section class="panel demo-area">
       <h2>Banner preview</h2>
       <p class="note">Seasonal rules apply; if out of season you may not see the banner.</p>
-      <ccws-banner></ccws-banner>
     </section>
 
     <section class="panel">
@@ -149,4 +159,5 @@
   </main>
 
 </body>
+
 </html>
