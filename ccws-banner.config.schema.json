@@ -1,0 +1,75 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CCWS Banner Configuration",
+  "description": "Schema describing supported configuration options for CCWS Banner.",
+  "type": "object",
+  "properties": {
+    "apiUrl": { "type": "string", "format": "uri" },
+    "siteUrl": { "type": "string", "format": "uri" },
+    "seasonStart": {
+      "type": "object",
+      "properties": {
+        "month": { "type": "integer", "minimum": 1, "maximum": 12 },
+        "day": { "type": "integer", "minimum": 1, "maximum": 31 }
+      },
+      "additionalProperties": false
+    },
+    "seasonEnd": {
+      "type": "object",
+      "properties": {
+        "month": { "type": "integer", "minimum": 1, "maximum": 12 },
+        "day": { "type": "integer", "minimum": 1, "maximum": 31 }
+      },
+      "additionalProperties": false
+    },
+    "text": {
+      "type": "object",
+      "properties": {
+        "open": { "type": "string" },
+        "closed": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "colors": {
+      "type": "object",
+      "properties": {
+        "open": { "type": "string" },
+        "closed": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "banner": {
+      "type": "object",
+      "properties": {
+        "zIndex": { "type": "integer" },
+        "fontFamily": { "type": "string" },
+        "padding": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "modal": {
+      "type": "object",
+      "properties": {
+        "iframeHeight": { "type": "integer", "minimum": 0 },
+        "backdrop": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "timing": {
+      "type": "object",
+      "properties": {
+        "slideDelayMs": { "type": "integer", "minimum": 0 },
+        "iframeFallbackMs": { "type": "integer", "minimum": 0 }
+      },
+      "additionalProperties": false
+    },
+    "fetchOptions": {
+      "type": "object",
+      "properties": {
+        "cache": { "type": "string" }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": false
+}
